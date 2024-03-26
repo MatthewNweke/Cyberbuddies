@@ -14,11 +14,11 @@ menu.addEventListener("click", function () {
     sidebar.classList.toggle("active");
   });
 
+  const sidebarMenubar = document.querySelector('.sidebar_menubar');
+  const aside = document.querySelector('aside ul');
 
-const toggleMenuBtn = document.querySelector('.toggle-menu');
-const menuContent = document.querySelector('.menu_content');
+  sidebar.addEventListener('click',function(){
+aside.classList.toggle('active');
+  })
 
-toggleMenuBtn.addEventListener('click', () => {
-  sidebar.classList.toggle('active');
-  menuContent.classList.toggle('active');
-});
+  
