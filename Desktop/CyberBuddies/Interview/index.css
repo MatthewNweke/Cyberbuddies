@@ -157,6 +157,7 @@ input {
 
 }
 
+
 .main_content aside + div {
   width: 70%;
 }
@@ -197,6 +198,7 @@ footer {
   display: flex;
   flex-direction: column;
   margin-top: 10rem;
+  font-size: 1.2rem;
 }
 .footer-top_content {
   list-style: none;
