@@ -127,12 +127,22 @@ main {
 }
 
 .sidebar ul li {
-  /* padding: 0 1rem; */
+  padding: 0 1rem;
   border-radius: 1rem;
   display: flex;
   align-items: center;
   width: 100% !important;
-  margin-bottom: 2rem;
+}
+
+.inbox1{
+  border-bottom: 3px solid navy;
+  padding-bottom: 0.3rem;
+}
+
+.saved_list{
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .sidebar ul li a {
