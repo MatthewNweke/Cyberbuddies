@@ -330,6 +330,8 @@ nav div ul:first-child {
   transition: all 0.7s ease;
 }
 
+
+
 /* media queries */
 @media screen and (max-width: 1130px) {
   .footer-top_content {
@@ -339,6 +341,16 @@ nav div ul:first-child {
   }
   .footer-top_content li {
     flex-basis: 40%;
+  }
+
+  .sidebar{
+    background-color: white;
+    border: none;
+  }
+
+  .active{
+    background-color: #eee;
+    border-right: 1px solid #ccc;
   }
 }
 
@@ -369,6 +381,8 @@ nav div ul:first-child {
 
   aside ul {
     display: none;
+   
+    
   }
 
   .addDropdown {
@@ -441,12 +455,17 @@ nav div ul:first-child {
     padding: 0.5rem;
     font-size: 0.8rem;
   }
+  .profile{
+    padding-left: 1rem ;
+      }
 }
 @media (max-width: 376px) {
   .addDropdown {
     top: 15rem;
     right: 2rem;
   }
+
+
 }
 @media (max-width: 300px) {
   .profile {
