@@ -118,7 +118,7 @@ main {
 
 .sidebar_menubar {
   position: absolute;
-  right: 0;
+  right: 0.8rem;
 }
 .inbox {
   font-weight: 500;
@@ -372,7 +372,12 @@ nav div ul:first-child {
   .copyright {
     order: 4;
   }
-
+  .removeContent{
+    display: none;
+  }
+  .active{
+    width: 100%;
+  }
   .sidebar {
     position: relative;
   }
@@ -401,6 +406,7 @@ nav div ul:first-child {
     top: 15rem;
     right: 2rem;
   }
+  
 
   .header-right_symbols {
     display: none;
