@@ -1,8 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap'); 
+
+
 body {
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Figtree', sans-serif;
   overflow-x: hidden;
 }
+
+h1, h2, h3 {
+  font-family: 'Inter', sans-serif;
+}
+
+/* p {
+  font-family: 'Cormorant', serif;
+} */
 
 html {
   box-sizing: border-box;
@@ -78,11 +92,20 @@ ul {
 main {
   margin-top: 5rem;
 }
-
+.message {
+  position: absolute;
+  top: 1rem;
+  /* margin-bottom: 2rem; */
+}
+.text-color svg{
+  position: relative;
+  top: 0.5rem;
+}
 .main_content {
   display: flex;
   gap: 5%;
   width: 100%;
+  position: relative;
   /* background-color: transparent; */
 }
 .toggler,
@@ -105,18 +128,17 @@ main {
 
 .sidebar ul li {
   padding: 0 1rem;
-  border-radius: 0.4rem;
+  border-radius: 1rem;
   display: flex;
-align-items: center;
-width: 100%;
+  align-items: center;
+  width: 100%;
 }
-
 
 .sidebar ul li a {
   display: block;
 }
 
-.text-color{
+.text-color {
   background-color: black;
   color: white;
 }
@@ -141,22 +163,23 @@ input {
   outline: none;
   margin-bottom: 1rem;
   padding: 0 0.7rem;
+  position: relative;
+  top: 2rem;
 }
 
-.profile {
-  display: flex;
-  align-items: center;
-  width: 70%;
-  gap: 10%;
-  box-shadow: 1px 0.5px 10px #eee;
-  width: 100%;
-  gap: 0.5rem;
-  padding: 0 0 0 0.5rem;
- position: relative;
- bottom: 5rem;
-
+.profile_container {
+  position: relative;
+  box-shadow: 0.5px 0.5px 2px black;
+  height: 17vh;
+  margin-bottom: 1rem;
+  /* border :1px solid black; */
+  padding: 0 0.5rem;
 }
-
+.profile img {
+  object-fit: contain;
+  height: 3rem;
+  width: 3rem;
+}
 
 .main_content aside + div {
   width: 70%;
@@ -255,7 +278,9 @@ footer {
 .bell svg {
   width: 10rem;
 }
-
+.message {
+  text-align: left;
+}
 .capital_J {
   border-radius: 50%;
   color: white;
@@ -270,6 +295,16 @@ footer {
 
 nav div ul:first-child {
   width: 30vw;
+}
+
+.profile {
+  height: 17vh;
+  border-radius: 1px 1px 2px black;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 15%;
+  gap: 1rem;
 }
 
 .addDropdown {
@@ -301,7 +336,6 @@ nav div ul:first-child {
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    
   }
   .footer-top_content li {
     flex-basis: 40%;
@@ -312,15 +346,16 @@ nav div ul:first-child {
   .copyright {
     order: 4;
   }
-  
+
   .sidebar {
     position: relative;
   }
 
-  .sidebar ul li{
-   /* padding: 0; */
+  .sidebar ul li {
+    /* padding: 0; */
     width: 100%;
     font-size: 0.8rem;
+   
   }
 
   .toggler,
@@ -357,7 +392,7 @@ nav div ul:first-child {
     padding: 0.5rem 1 0.5rem 1;
   }
 
-  .conversation{
+  .conversation {
     padding: 0.8rem 1rem;
 
     font-size: 0.9rem;
@@ -370,7 +405,7 @@ nav div ul:first-child {
     right: 1rem;
   }
 
-  .conversation{
+  .conversation {
     padding: 0.8rem;
     font-size: 1rem;
   }
@@ -386,7 +421,7 @@ nav div ul:first-child {
     flex-basis: 100%;
   }
 
-  .conversation{
+  .conversation {
     padding: 0.6rem;
     font-size: 0.8rem;
   }
@@ -398,7 +433,11 @@ nav div ul:first-child {
     right: 2rem;
   }
 
-  .conversation{
+  .date {
+    font-weight: 400;
+  }
+
+  .conversation {
     padding: 0.5rem;
     font-size: 0.8rem;
   }
@@ -407,5 +446,10 @@ nav div ul:first-child {
   .addDropdown {
     top: 15rem;
     right: 2rem;
+  }
+}
+@media (max-width: 300px) {
+  .profile {
+    flex-flow: column wrap;
   }
 }
