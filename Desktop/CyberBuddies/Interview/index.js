@@ -9,16 +9,12 @@ menu.addEventListener("click", function () {
   const sidebar = document.querySelector(".sidebar");
   const sidebarToggleButton = document.querySelector(".sidebar_menubar");
   const headerToggleButton = document.querySelector(".toggler");
+  const aside = document.querySelector('aside ul');
 
   sidebarToggleButton.addEventListener("click", () => {
     sidebar.classList.toggle("active");
-  });
-
-  const sidebarMenubar = document.querySelector('.sidebar_menubar');
-  const aside = document.querySelector('aside ul');
-
-  sidebar.addEventListener('click',function(){
 aside.classList.toggle('active');
-  })
+
+  });
 
   

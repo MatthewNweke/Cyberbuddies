@@ -127,11 +127,12 @@ main {
 }
 
 .sidebar ul li {
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
   border-radius: 1rem;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 100% !important;
+  margin-bottom: 2rem;
 }
 
 .sidebar ul li a {
@@ -332,6 +333,8 @@ nav div ul:first-child {
 
 
 
+
+
 /* media queries */
 @media screen and (max-width: 1130px) {
   .footer-top_content {
@@ -350,7 +353,8 @@ nav div ul:first-child {
 
   .active{
     background-color: #eee;
-    border-right: 1px solid #ccc;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
   }
 }
 
@@ -380,9 +384,7 @@ nav div ul:first-child {
   }
 
   aside ul {
-    display: none;
-   
-    
+    display: none;  
   }
 
   .addDropdown {
