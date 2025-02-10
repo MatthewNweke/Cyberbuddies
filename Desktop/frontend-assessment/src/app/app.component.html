@@ -1,9 +1,49 @@
-<div *ngIf="isLoading">Loading...</div>
-<div *ngIf="error">{{ error }}</div>
+<div class="container mt-5">
 
-<ul *ngIf="!isLoading && !error">
-  <li *ngFor="let item of data">
-    <h2>{{ item.title }}</h2>
-    <p>{{ item.body }}</p>
-  </li>
-</ul>
+  <h1 class="text-center mb-4 text-primary">Latest Posts</h1>
+
+  <!-- Show loading message -->
+  <div *ngIf="isLoading" class="text-center">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Show error message if there is an error -->
+  <div *ngIf="error" class="alert alert-danger text-center">
+    {{ error }}
+  </div>
+
+  <!-- Display fetched posts in a grid layout -->
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="col" *ngFor="let item of data">
+      <div class="card shadow-lg border-0 h-100 hover-effect">
+        <div class="card-body">
+          <h5 class="card-title text-primary fw-bold">{{ item.title | titlecase }}</h5>
+          <p class="card-text text-muted">{{ item.body }}</p>
+        </div>
+        <div class="card-footer bg-transparent border-0 text-end">
+          <button class="btn btn-outline-primary">Read More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-button buttonText="Submit" buttonStyle="primary" (onClick)="handleButtonClick()"></app-button>
+  <app-input-field buttonText="Submit" buttonStyle="primary" (onClick)="handleButtonClick()"></app-input-field>
+  <app-property-listing-card 
+  [title]="'Luxury Apartment in Lekki'"
+  [description]="'A stunning 3-bedroom apartment with ocean views and modern amenities.'"
+  [price]="25000000"  
+  [image]="'/luxury.jpg'"
+  [status]="'For Sale'">
+</app-property-listing-card>
+
+<app-property-listing-card 
+  [title]="'Cozy Duplex in Victoria Island'"
+  [description]="'Beautiful 4-bedroom duplex in a gated estate, perfect for families.'"
+  [price]="30000000"  
+  [image]="'cozy.jpg'"
+  [status]="'For Rent'">
+</app-property-listing-card>
+
+</div>

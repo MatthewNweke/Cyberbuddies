@@ -1,8 +1,24 @@
-<div class="card mb-3">
-  <img [src]="image" class="card-img-top" alt="Property Image">
+<div class="card property-card shadow-lg">
+  <!-- Property Image -->
+  <div class="position-relative">
+    <img [src]="image" class="card-img-top" alt="Property Image">
+    <span class="badge property-status">{{ status }}</span>
+  </div>
+
   <div class="card-body">
-    <h5 class="card-title">{{ title }}</h5>
-    <p class="card-text">{{ description }}</p>
-    <p class="card-text"><strong>Price:</strong> {{ price | currency }}</p>
+    <!-- Title -->
+    <h5 class="card-title text-primary fw-bold">{{ title }}</h5>
+    
+    <!-- Description -->
+    <p class="card-text text-muted">{{ description }}</p>
+
+    <!-- Price -->
+    <p class="card-text price"><strong>Price:</strong> {{ price | currency:'NGN' }}</p>
+
+    <!-- Call-to-action buttons -->
+    <div class="d-grid gap-2">
+      <button class="btn btn-outline-primary">View Details</button>
+      <button class="btn btn-primary">Contact Agent</button>
+    </div>
   </div>
 </div>

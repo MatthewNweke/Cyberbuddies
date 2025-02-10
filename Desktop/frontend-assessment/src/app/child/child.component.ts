@@ -1,21 +1,24 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-child',
-  templateUrl: './child.component.html',
-  styleUrls: ['./child.component.css']
+  standalone: true,
+  template: `
+    <h3>Child Component</h3>
+    <ul>
+      <li *ngFor="let item of items">{{ item }}</li>
+    </ul>
+    <button (click)="addItem()">Add Item</button>
+  `,
+  imports: [CommonModule]
 })
 export class ChildComponent {
   @Input() items: string[] = [];
   @Output() updatedItems = new EventEmitter<string[]>();
-  newItemControl = new FormControl('');
 
-  addItem(): void {
-    if (this.newItemControl.value) {
-      this.items.push(this.newItemControl.value);
-      this.updatedItems.emit(this.items);
-      this.newItemControl.reset();
-    }
+  addItem() {
+    this.items.push(`Item ${this.items.length + 1}`);
+    this.updatedItems.emit(this.items);
   }
 }

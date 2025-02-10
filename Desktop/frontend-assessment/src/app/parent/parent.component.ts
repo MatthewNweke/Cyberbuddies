@@ -1,23 +1,20 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { ChildComponent } from '../child/child.component';
 
 @Component({
   selector: 'app-parent',
-  templateUrl: './parent.component.html',
-  styleUrls: ['./parent.component.css']
+  standalone: true,
+  template: `
+    <h2>Parent Component</h2>
+    <app-child [items]="items" (updatedItems)="updateItems($event)"></app-child>
+  `,
+  imports: [CommonModule, ChildComponent]
 })
 export class ParentComponent {
-  items: string[] = [];
-  newItemControl = new FormControl('');
+  items: string[] = ['Item 1', 'Item 2', 'Item 3'];
 
-  addItem(): void {
-    if (this.newItemControl.value) {
-      this.items.push(this.newItemControl.value);
-      this.newItemControl.reset();
-    }
-  }
-
-  updateItems(updatedItems: string[]): void {
-    this.items = updatedItems;
+  updateItems(newItems: string[]) {
+    this.items = newItems;
   }
 }

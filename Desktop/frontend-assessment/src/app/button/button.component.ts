@@ -1,7 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-button',
+  standalone: true, // Important for standalone apps
+  imports: [CommonModule], // Import CommonModule for template directives
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.css']
 })
@@ -15,7 +18,7 @@ export class ButtonComponent {
   }
 
   handleClick(): void {
-    this.onClick.emit();
-    console.log('Button clicked!');
+    this.onClick.emit(); // Emit event to parent
+    console.log('Button clicked inside ButtonComponent!');
   }
 }
