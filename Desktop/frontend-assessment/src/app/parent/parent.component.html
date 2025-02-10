@@ -1,0 +1,13 @@
+<div class="container mt-5">
+    <app-input-field
+      inputType="text"
+      placeholder="Add an item"
+      [formControl]="newItemControl"
+    ></app-input-field>
+    <app-button
+      buttonText="Add Item"
+      buttonStyle="primary"
+      (onClick)="addItem()"
+    ></app-button>
+    <app-child [items]="items" (updatedItems)="updateItems($event)"></app-child>
+  </div>

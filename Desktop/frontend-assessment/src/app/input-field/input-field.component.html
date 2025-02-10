@@ -1,0 +1,10 @@
+<div>
+  <input
+    [type]="inputType"
+    [placeholder]="placeholder"
+    [formControl]="formControl"
+    (input)="validateInput()"
+    class="form-control"
+  />
+  <div *ngIf="errorMessage" class="text-danger mt-2">{{ errorMessage }}</div>
+</div>

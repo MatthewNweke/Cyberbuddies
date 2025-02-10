@@ -1,0 +1,15 @@
+<div class="mt-3">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let item of items">{{ item }}</li>
+  </ul>
+  <app-input-field
+    inputType="text"
+    placeholder="Add an item"
+    [formControl]="newItemControl"
+  ></app-input-field>
+  <app-button
+    buttonText="Add Item"
+    buttonStyle="primary"
+    (onClick)="addItem()"
+  ></app-button>
+</div>
